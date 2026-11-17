@@ -22,7 +22,7 @@ def dbs():
 @app.route("/dbsP", methods=["GET", "POST"])
 def dbsP():
     q = float(request.form.get("q"))
-    r = dbsModel.predict([q])
+    r = dbsModel.predict([[q]])
     return(render_template("dbsP.html", r=r[0][0]))
 
 # name means "here"
